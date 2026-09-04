@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AR Test – laufende Figur</title>
+    <title>AR Test – eigenes Target</title>
 
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
@@ -16,7 +16,7 @@
 
   <body>
     <a-scene
-      mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/card.mind;"
+      mindar-image="imageTargetSrc: ./targets.mind;"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
@@ -32,8 +32,8 @@
         <a-gltf-model
           src="#figur"
           position="0 0 0"
-          rotation="0 0 90"
-          scale="10 10 10"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
           animation-mixer
         ></a-gltf-model>
       </a-entity>
