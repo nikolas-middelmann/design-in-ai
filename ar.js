@@ -8,6 +8,7 @@
   var hinweis = document.getElementById('hinweis');
   var usdz    = blatt.getAttribute('data-usdz');
   var glb     = blatt.getAttribute('data-glb');
+  var ton     = blatt.getAttribute('data-ton');   // nur Android: Ton getrennt von der GLB (im USDZ steckt er schon)
   var h1      = document.querySelector('h1');
   var titel   = h1 ? h1.textContent.trim() : '';
   var KEINE_AR = '#keine-ar';
@@ -57,6 +58,7 @@
       disable_occlusion: 'true'
     };
     if (titel) parameter.title = titel;
+    if (ton) parameter.sound = absolut(ton);   // läuft in Schleife mit der Animation
     var abfrage = Object.keys(parameter).map(function (name) {
       return name + '=' + encodeURIComponent(parameter[name]);
     }).join('&');

@@ -9,12 +9,15 @@
 </head>
 <body>
 
-  <!-- Welche Szene dieses Blatt zeigt: nur diese zwei Pfade ändern -->
+  <!-- Welche Szene dieses Blatt zeigt: nur diese Pfade ändern (data-usdz fürs iPhone, data-glb und data-ton für Android) -->
   <!-- Szene 1, Fassung 2: mit Ton (Stimme an der Figur, 6 Runden) und Verfolger-Spot (Kulisse K10).
        Frühere Fassungen: ../modell/szene1.usdz (ohne Spot), ../modell/K10_Spot_Banner_Test.usdz (Banner-Test), ../modell/K10_Spot.usdz -->
+  <!-- Android (Scene Viewer): GLB aus der iPhone-Datei umgewandelt (usdz_zu_glb.py), Ton getrennt als MP3 (data-ton).
+       Frühere Android-Fassung: ../modell/K10_Spot.glb (Figur mit Verfolger-Spot, ohne Ton) -->
   <main id="blatt"
         data-usdz="../modell/szene1_v2.usdz"
-        data-glb="../modell/K10_Spot.glb">
+        data-glb="../modell/szene1_v2.glb"
+        data-ton="../modell/szene1_ton.mp3">
 
     <p class="projekt">design in ai</p>
     <p class="nummer">01</p>

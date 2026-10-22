@@ -9,13 +9,15 @@
 </head>
 <body>
 
-  <!-- Welche Szene dieses Blatt zeigt: nur diese zwei Pfade ändern -->
+  <!-- Welche Szene dieses Blatt zeigt: nur diese Pfade ändern (data-usdz fürs iPhone, data-glb und data-ton für Android) -->
   <!-- Szene 5, Fassung 3: Kulisse K26 „Druckstudio“, zweite Fassung (Studiowände 4 m hoch; die fertig gedruckte Hand
        winkt einmal, sobald der Roboter in der Ruhelage ist). Frühere Fassungen: ../modell/szene5_v2.usdz (K26, erste
        Fassung: Wände 2 m, ohne Winken), ../modell/szene5.usdz (ohne Kulisse) -->
+  <!-- Android (Scene Viewer): GLB aus der iPhone-Datei umgewandelt (usdz_zu_glb.py), Ton getrennt als MP3 (data-ton) -->
   <main id="blatt"
         data-usdz="../modell/szene5_v3.usdz"
-        data-glb="../modell/szene5.glb">
+        data-glb="../modell/szene5_v3.glb"
+        data-ton="../modell/szene5_ton.mp3">
 
     <p class="projekt">design in ai</p>
     <p class="nummer">05</p>

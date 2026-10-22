@@ -9,14 +9,16 @@
 </head>
 <body>
 
-  <!-- Welche Szene dieses Blatt zeigt: nur diese zwei Pfade ändern -->
+  <!-- Welche Szene dieses Blatt zeigt: nur diese Pfade ändern (data-usdz fürs iPhone, data-glb und data-ton für Android) -->
   <!-- Szene 4, Fassung 3: Kulisse K22 „Buch“, zweite Fassung – doppelt so groß (5,2 m), Titel linksbündig, © unten rechts;
        das Buch atmet und wabert, Lichtsaum, Strahlen im Takt der Stimme, Zeilen strömen heraus, Stapel älterer Fassungen,
        der Schatten hinterlässt Spuren. Frühere Fassungen: ../modell/szene4_v2.usdz (Buch mit Schatten),
        ../modell/szene4.usdz (ohne Kulisse) -->
+  <!-- Android (Scene Viewer): GLB aus der iPhone-Datei umgewandelt (usdz_zu_glb.py), Ton getrennt als MP3 (data-ton) -->
   <main id="blatt"
         data-usdz="../modell/szene4_v3.usdz"
-        data-glb="../modell/szene4.glb">
+        data-glb="../modell/szene4_v3.glb"
+        data-ton="../modell/szene4_ton.mp3">
 
     <p class="projekt">design in ai</p>
     <p class="nummer">04</p>

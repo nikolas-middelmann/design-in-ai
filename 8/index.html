@@ -9,16 +9,20 @@
 </head>
 <body>
 
-  <!-- Welche Szene dieses Blatt zeigt: nur diese zwei Pfade ändern -->
+  <!-- Welche Szene dieses Blatt zeigt: nur diese Pfade ändern (data-usdz fürs iPhone, data-glb und data-ton für Android) -->
   <!-- Szene 8, Fassung 6: wie Fassung 5 (Tanz, Glitzerplättchen, drei Stroboskop-Standbilder), dazu eine Horde aus
        knapp 1900 schemenhaften Kopien in Tanzposen – ab 2,3 m um ihn herum bis zum Horizont (100 m), gruppenweise
        versetzt im Takt wippend.
        Frühere Fassungen: ../modell/szene8_v5.usdz (ohne Horde), ../modell/szene8_v4.usdz (nur die tanzende Figur),
        ../modell/szene8_v3.usdz (Spiegel-Arena, 6 Spiegel), ../modell/szene8_v2.usdz (12 Spiegel, öffnet auf dem iPhone
        nicht), ../modell/szene8.usdz -->
+  <!-- Android (Scene Viewer): GLB aus einer leichteren Android-Fassung umgewandelt (usdz_zu_glb.py) – alles wie oben,
+       nur die Horde kleiner, damit die Datei unter der Grenze von Scene Viewer bleibt: 1109 statt knapp 1900 Kopien,
+       gröber aufgelöst und lockerer verteilt (szene8_v6_horde_android.py). Ton getrennt als MP3 (data-ton) -->
   <main id="blatt"
         data-usdz="../modell/szene8_v6.usdz"
-        data-glb="../modell/szene8.glb">
+        data-glb="../modell/szene8_v6.glb"
+        data-ton="../modell/szene8_ton.mp3">
 
     <p class="projekt">design in ai</p>
     <p class="nummer">08</p>
