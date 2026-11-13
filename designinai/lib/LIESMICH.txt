@@ -1,0 +1,4 @@
+three.js r170 (MIT-Lizenz, siehe LICENSE-three.txt), Quelle: https://github.com/mrdoob/three.js
+- three.module.min.js: unverändert aus build/
+- addons/: aus examples/jsm/, einzige Änderung: der Import "from 'three'" zeigt direkt auf ../../three.module.min.js,
+  damit die Seite ohne Import-Map auskommt (läuft so auch auf älteren iPhones).
