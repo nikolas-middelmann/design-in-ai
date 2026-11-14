@@ -2,3 +2,5 @@ three.js r170 (MIT-Lizenz, siehe LICENSE-three.txt), Quelle: https://github.com/
 - three.module.min.js: unverändert aus build/
 - addons/: aus examples/jsm/, einzige Änderung: der Import "from 'three'" zeigt direkt auf ../../three.module.min.js,
   damit die Seite ohne Import-Map auskommt (läuft so auch auf älteren iPhones).
+- addons/loaders/GLTFLoader.js und addons/utils/BufferGeometryUtils.js: nur für Fassung 2 (knospe_v2.js),
+  sie laden die Grundfigur (figur/grundfigur.glb). Fassung 1 (knospe.js) braucht sie nicht.
