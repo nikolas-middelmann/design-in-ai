@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+  Web-Knospe, Fassung 3 (Entwurf): wie Fassung 2, aber die Figur ohne die weißen Flecken an den Knien
+  (neue Figurdatei figur/grundfigur_v2.glb).
+  Frühere Fassungen, alle unverändert: v2.html mit knospe_v2.js (Fassung 2: die Grundfigur aus Szene 1 geht um den Sockel)
+  und index.html mit knospe.js (Fassung 1, live unter /designinai/).
+  Zum Ausprobieren: v3.html?radius=1.5 (Kreis in Metern), v3.html?schweben=0.352 (Höhe wie in Szene 1), v3.html?figur=0 (ohne Figur).
+-->
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <title>design in ai</title>
+  <meta name="description" content="ein ar-essay über design angesichts künstlicher intelligenz">
+  <meta property="og:title" content="design in ai">
+  <meta property="og:description" content="ein ar-essay über design angesichts künstlicher intelligenz">
+  <link rel="stylesheet" href="../stil.css">
+  <link rel="modulepreload" href="./lib/three.module.min.js">
+  <!-- die Figur schon laden, während die Seite aufbaut -->
+  <link rel="modulepreload" href="./lib/addons/loaders/GLTFLoader.js">
+  <link rel="preload" href="./figur/grundfigur_v2.glb" as="fetch" crossorigin>
+  <style>
+    /* nur für die Web-Knospe; Schrift und Knopf kommen aus stil.css */
+    html, body { height: 100%; overflow: hidden; overscroll-behavior: none; }
+    body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+
+    #buehne {
+      position: fixed; inset: 0; width: 100%; height: 100%; display: block;
+      touch-action: none; outline: none; opacity: 0; transition: opacity 1.4s ease;
+    }
+    body.bereit #buehne { opacity: 1; }
+
+    /* Textebene über der Bühne: lässt Berührungen durch, nur der Knopf fängt sie */
+    #ebene {
+      position: fixed; inset: 0; min-height: 0; pointer-events: none;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.80) 0, rgba(0, 0, 0, 0.45) 17%, rgba(0, 0, 0, 0) 42%);
+    }
+    #unten { margin-top: auto; display: flex; flex-direction: column; }
+    #einstieg { transition: opacity 1.2s ease; }
+    #einstieg.leise { opacity: 0; }
+    #einstieg.weg { display: none; }
+    .einfuehrung { margin: 0; max-width: 15em; font-size: 26px; font-weight: 300; line-height: 1.2; }
+    .tipp { margin: 18px 0 0; font-size: 15px; line-height: 1.45; color: rgba(255, 255, 255, 0.82); }
+    .ton { margin: 6px 0 0; font-size: 14px; color: rgba(255, 255, 255, 0.55); }
+
+    #wahl { display: flex; flex-direction: column; }
+    #wahl[hidden] { display: none; }
+    #wahl .nummer { margin: 0; font-size: 56px; }
+    #titel { margin: 8px 0 22px; font-size: 22px; font-weight: 300; }
+    #ar-knopf { pointer-events: auto; background: rgba(0, 0, 0, 0.35); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+    #hinweis { margin-top: 12px; }
+
+    /* Ersatz, falls 3D im Browser nicht geht */
+    #ersatz { display: none; }
+    body.ohne-3d #buehne, body.ohne-3d #einstieg .tipp { display: none; }
+    body.ohne-3d #ersatz { display: block; position: fixed; left: 24px; right: 24px; top: 30%; font-size: 17px; line-height: 2; }
+    #ersatz a { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <canvas id="buehne" tabindex="0" aria-label="die knospe: acht blätter auf einem leuchtenden sockel. jedes blatt öffnet eine szene."></canvas>
+
+  <main id="ebene">
+    <p class="projekt">design in ai</p>
+
+    <div id="unten">
+    <!-- Einstieg: verschwindet bei der ersten Berührung -->
+    <div id="einstieg">
+      <h1 class="einfuehrung">ein ar-essay über design angesichts künstlicher intelligenz</h1>
+      <p class="tipp">zieh an einem blatt. tippe es an, um seine szene zu öffnen.</p>
+      <p class="ton">mit ton – am besten mit kopfhörern.</p>
+    </div>
+
+    <!-- erscheint, wenn ein Blatt angetippt ist -->
+    <div id="wahl" hidden>
+      <p class="nummer" id="nummer">01</p>
+      <h2 id="titel">szene 1</h2>
+      <button id="ar-knopf" type="button" hidden>im raum ansehen</button>
+      <p id="hinweis"></p>
+    </div>
+
+    <p class="copyright">© Nikolas Middelmann</p>
+    </div>
+  </main>
+
+  <!-- ohne 3D oder ohne JavaScript: die acht Szenen als Liste -->
+  <nav id="ersatz">
+    <a href="../1/">szene 1</a><br><a href="../2/">szene 2</a><br><a href="../3/">szene 3</a><br><a href="../4/">szene 4</a><br>
+    <a href="../5/">szene 5</a><br><a href="../6/">szene 6</a><br><a href="../7/">szene 7</a><br><a href="../8/">szene 8</a>
+  </nav>
+  <noscript><style>#ersatz { display: block !important; position: fixed; left: 24px; top: 30%; font-size: 17px; line-height: 2; } #buehne, .tipp { display: none; }</style></noscript>
+
+  <script type="module" src="./knospe_v3.js"></script>
+</body>
+</html>
