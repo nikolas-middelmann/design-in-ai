@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<!--
+  Web-Knospe, Fassung 3 (live): die Knospe zum Auffächern, dazu geht die Grundfigur aus Szene 1 um den Sockel.
+  Code: knospe_v3.js, Figur: figur/grundfigur_v2.glb (ohne die weißen Flecken an den Knien).
+  Frühere Fassungen sind offline und liegen in der Git-Geschichte (zuletzt vollständig in Commit 6178ee9):
+  Fassung 1 (diese Seite mit knospe.js, ohne Figur), Fassung 2 (v2.html mit knospe_v2.js und figur/grundfigur.glb)
+  und der Entwurf v3.html.
+  Zum Ausprobieren: ?radius=1.5 (Kreis in Metern), ?schweben=0.352 (Höhe wie in Szene 1), ?figur=0 (ohne Figur).
+-->
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -10,6 +18,9 @@
   <meta property="og:description" content="ein ar-essay über design angesichts künstlicher intelligenz">
   <link rel="stylesheet" href="../stil.css">
   <link rel="modulepreload" href="./lib/three.module.min.js">
+  <!-- die Figur schon laden, während die Seite aufbaut -->
+  <link rel="modulepreload" href="./lib/addons/loaders/GLTFLoader.js">
+  <link rel="preload" href="./figur/grundfigur_v2.glb" as="fetch" crossorigin>
   <style>
     /* nur für die Web-Knospe; Schrift und Knopf kommen aus stil.css */
     html, body { height: 100%; overflow: hidden; overscroll-behavior: none; }
@@ -82,6 +93,6 @@
   </nav>
   <noscript><style>#ersatz { display: block !important; position: fixed; left: 24px; top: 30%; font-size: 17px; line-height: 2; } #buehne, .tipp { display: none; }</style></noscript>
 
-  <script type="module" src="./knospe.js"></script>
+  <script type="module" src="./knospe_v3.js"></script>
 </body>
 </html>

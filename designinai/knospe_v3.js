@@ -1,6 +1,7 @@
-// knospe_v3.js – Echtzeit-Knospe für nmlab.de/designinai, Fassung 3 (Entwurf, geladen von v3.html)
-// Frühere Fassungen, beide unverändert: knospe.js (Fassung 1, live unter /designinai/) und knospe_v2.js (Fassung 2,
-// v2.html: die Grundfigur aus Szene 1 geht um den Sockel, Abschnitt 9; Totale in Abschnitt 6, Auftakt in 10 und 11).
+// knospe_v3.js – Echtzeit-Knospe für nmlab.de/designinai, Fassung 3 (live, geladen von index.html)
+// Frühere Fassungen sind offline und liegen in der Git-Geschichte (zuletzt vollständig in Commit 6178ee9):
+// knospe.js (Fassung 1, ohne Figur) und knospe_v2.js (Fassung 2, mit v2.html: die Grundfigur aus Szene 1 geht um
+// den Sockel, Abschnitt 9; Totale in Abschnitt 6, Auftakt in 10 und 11).
 // Neu in Fassung 3: die Figur kommt aus figur/grundfigur_v2.glb, ohne die weißen Flecken an den Knien
 // (siehe werkzeug/figur_herausloesen_v2.py). Sonst gleicht diese Fassung der Fassung 2.
 // Mit ?figur=0 verhält sich diese Fassung wie Fassung 1.
